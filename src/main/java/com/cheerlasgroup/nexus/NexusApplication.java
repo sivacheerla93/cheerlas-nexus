@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackageClasses = { com.cheerlasgroup.nexus.repository.UserRepository.class })
+@EnableJpaRepositories(basePackageClasses = { com.cheerlasgroup.nexus.repository.UserDetailsRepository.class })
 public class NexusApplication {
 
 	public static void main(String[] args) {

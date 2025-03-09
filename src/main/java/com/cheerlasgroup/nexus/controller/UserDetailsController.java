@@ -3,21 +3,21 @@ package com.cheerlasgroup.nexus.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import com.cheerlasgroup.nexus.request.UserRequest;
-import com.cheerlasgroup.nexus.service.CustomUserDetailsService;
+import com.cheerlasgroup.nexus.request.UserDetailsRequest;
+import com.cheerlasgroup.nexus.service.UserDetailsService;
 
 @RestController
 @RequestMapping("/nexus")
-public class UserController {
+public class UserDetailsController {
 
-    private CustomUserDetailsService userDetailsService;
+    private UserDetailsService userDetailsService;
 
-    public UserController(CustomUserDetailsService userDetailsService) {
+    public UserDetailsController(UserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
     }
 
     @PostMapping("/create")
-    public String createUser(@RequestBody UserRequest userRequest) {
+    public String createUser(@RequestBody UserDetailsRequest userRequest) {
         userDetailsService.createUser(userRequest);
 
         return HttpStatus.CREATED.toString();
